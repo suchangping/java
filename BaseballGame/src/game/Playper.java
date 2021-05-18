@@ -1,9 +1,9 @@
 package game;
 
 public class Playper {
-    //int  atk;  //攻撃力
-    //int def; //防御力
-    //int handan= atk-def;
+    int  atk;  //攻撃力
+    int def; //防御力
+
 
     int ball = new java.util.Random().nextInt(3) + 1;
 
