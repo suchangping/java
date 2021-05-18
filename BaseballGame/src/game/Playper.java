@@ -5,11 +5,13 @@ public class Playper {
     int def; //防御力
 
 
-    int ball = new java.util.Random().nextInt(3) + 1;
 
-    public void pitch() {
 
-        switch (this.ball) {
+    public int pitch() {
+        int ball = new java.util.Random().nextInt(3) + 1;
+
+
+        switch (ball) {
             case 1:
                 System.out.println("ボール投げました");
                 break;
@@ -19,37 +21,56 @@ public class Playper {
             case 3:
                 System.out.println("ストライク投げました");
         }
+        return ball;
+
+
+
+
+
     }
+
+
 
     public void hit(Team team, int ball) {
         int balltype;
 
-        if (this.ball == 1) {//ボール
+        if (ball == 1) {//ボール
             balltype = new java.util.Random().nextInt(2) + 1;
             switch (balltype) {
                 case 1:
-                    System.out.println("打ちました。");
+                    team.setOut(1);
+                    System.out.println("ボール打ちました。" + team.getOut());
+
                     break;
                 case 2:
-                    System.out.println("打ってないです。");
+                    team.setBase(1);
+                    System.out.println("ボール打ってないです。out" +team.getBase());
+
                     break;
                 default:
                     break;
 
             }
-        } else if (this.ball == 2) {
-            System.out.println("進塁しました。");
-            team.setBase(1);
+        } else if (ball == 2) {
+            team.setBase(4);
+            System.out.println("デットボールなので進塁しました。" +team.getBase());
+
 
 
         } else {
             balltype = new java.util.Random().nextInt(2) + 1;
             switch (balltype) {
                 case 1:
-                    System.out.println("打ちました。");
+                    team.setScore(1,1);
+                    //System.out.println("打ちました。"+ team.getScore());
+
+
+
                     break;
                 case 2:
-                    System.out.println("打ってないです。");
+                    team.setOut(1);
+                    System.out.println("ストライク打ってないです。" +team.getOut());
+
                     break;
                 default:
                     break;
