@@ -26,7 +26,7 @@ public class Team {
         return this.out;
     }
     public void setBase(int base) {
-        this.base = base;
+        this.base += base;
     }
     public int getBase() {
         return this.base;

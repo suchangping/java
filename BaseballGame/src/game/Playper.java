@@ -1,41 +1,77 @@
 package game;
 
 public class Playper {
+    //int  atk;  //攻撃力
+    //int def; //防御力
+    //int handan= atk-def;
 
-    public boolean pitch() {
-        int ball = new java.util.Random().nextInt(2);
-        boolean isbadball = (ball == 1) ? true:false;
-        return isbadball;
+    int ball = new java.util.Random().nextInt(3) + 1;
+
+    public void pitch() {
+
+        switch (this.ball) {
+            case 1:
+                System.out.println("ボール投げました");
+                break;
+            case 2:
+                System.out.println("デッドボール投げました");
+                break;
+            case 3:
+                System.out.println("ストライク投げました");
+        }
     }
-    public int batter(Team team, int round, boolean isbadball) {
+
+    public void hit(Team team, int ball) {
         int balltype;
-        if(isbadball) {//悪いボール
+
+        if (this.ball == 1) {//ボール
             balltype = new java.util.Random().nextInt(2) + 1;
             switch (balltype) {
                 case 1:
-                    team.setScore(round, 1);
+                    System.out.println("打ちました。");
                     break;
                 case 2:
+                    System.out.println("打ってないです。");
                     break;
                 default:
                     break;
 
             }
-        }else {
-            balltype = new java.util.Random().nextInt(1);
+        } else if (this.ball == 2) {
+            System.out.println("進塁しました。");
+            team.setBase(1);
+
+
+        } else {
+            balltype = new java.util.Random().nextInt(2) + 1;
             switch (balltype) {
                 case 1:
+                    System.out.println("打ちました。");
+                    break;
+                case 2:
+                    System.out.println("打ってないです。");
                     break;
                 default:
                     break;
-            }
-        }
-        return 0;
-    }
-    public void runner() {
 
+            }
+
+        }
     }
-    public int defense() {
-        return 0;
+
+
+
+
+        public static void field () {
+            System.out.println("ボール取りました。");
+        }
+        public void run () {
+            System.out.println("進塁しました");
+        }
+        public int defense () {
+            return 0;
+        }
     }
-}
+
+
+
