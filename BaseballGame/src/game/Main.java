@@ -7,10 +7,20 @@ public class Main {
         Playper p = new Playper();
         teamA.setName("ソフトバンク");
         teamB.setName("楽天");
+
         for (int i = 0; i < 9; i++){
-            if(i%2 == 1) {
-            }else {
+            System.out.println(i);
+
+            int ball=p.pitch();
+            p.hit(teamA,ball);
+            if (i==3) {
+                teamA.setOut(9);
             }
+            System.out.println(teamA.getOut());
+            if (teamA.getOut()==9) {
+                return;
+            }
+
         }
     }
 
