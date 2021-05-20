@@ -3,12 +3,15 @@ package game;
 public class Team {
     String name;
     int round;
-    int[] scores = new int[9];
-    int out;
-    int base;
+    int[] scores = new int[12];
+    int batterout;
 
+    Team(){
+
+    }
     public void setScore(int round, int score) {
         scores[round] += score;
+        System.out.println("点数" + scores[round]);
     }
     public int[] getScores() {
         return scores;
@@ -19,17 +22,11 @@ public class Team {
     public String getName() {
         return this.name;
     }
-    public void setOut(int out) {
-        this.out += out;
+    public int getSumScore(){
+        int sum = 0;
+        for (int score: scores){
+            sum += score;
+        }
+        return sum;
     }
-    public int getOut() {
-        return this.out;
-    }
-    public void setBase(int base) {
-        this.base += base;
-    }
-    public int getBase() {
-        return this.base;
-    }
-
 }
