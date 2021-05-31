@@ -3,6 +3,8 @@ package game;
 public class Team {
     String name;
     int[] scores = new int[12];
+    int outcnt;
+    public void setOutcnt
 
     public void setScore(int round, int score) {
         scores[round] += score;

@@ -2,8 +2,8 @@ package game;
 
 public class Main {
 
-    public static void main(String args[]) {
-
+    //public static void main(String args[]) {
+    public static void main(String[] args) {
         int roundnum = 9;
         Player p;
         Team teamA = new Team();
@@ -11,14 +11,14 @@ public class Main {
         teamA.setName("ソフトバンク");
         teamB.setName("楽天");
 
-        System.out.println("---野球ゲームプログラム開始---");
+        System.out.println("---野球ゲームプログラム開始---");//最大回数の名前分かりやすくするように
         for (int round = 0; round < roundnum; round++) {
             System.out.println("★★★★第" + (round + 1) + "回合★★★★");
             if(round >= 8 && teamA.getSumScore() == teamB.getSumScore()) {
-                roundnum += 1;
+                roundnum += 1; //roundnum++;
             }
             for(int ch = 0; ch <2; ch++) {
-                p = new Player();
+                p = new Player();  //もう一回考える
                 if (ch == 0) {
                     System.out.println("★★★★第" + (round + 1) + "回合の上回合★★★★");
                     System.out.println("攻撃チーム:" + teamA.name

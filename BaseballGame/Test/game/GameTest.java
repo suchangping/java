@@ -17,6 +17,7 @@ public class GameTest {
     @Test
     public void testStrikeBall() {
         Team team = new Team();
+        team.setName("ソフトバンク");
         Player player = new Player();
 
         player.strikeBall(team,1,1);
@@ -33,7 +34,7 @@ public class GameTest {
     }
 
     @Test
-    public void testaddBase() {
+    public void testAddBase() {
         Team team = new Team();
         team.setName("ソフトバンク");
         Player p = new Player();
@@ -42,11 +43,27 @@ public class GameTest {
     }
 
     @Test
-    public void testdelchang() {
+    public void testDelChance() {
         Team team = new Team();
         team.setName("ソフトバンク");
         Player p = new Player();
         p.delChance();
         assertEquals(2, p.ballchance);
+    }
+
+    @Test
+    public void testAddBaseChace() {
+        Team team = new Team();
+        team.setName("ソフトバンク");
+        Player p = new Player();
+        p.addBasechace(team, 1);
+        assertEquals(1, p.basechance);
+        p.addBasechace(team, 2);
+        assertEquals(2, p.basechance);
+        p.addBasechace(team, 3);
+        assertEquals(3, p.basechance);
+        p.addBasechace(team, 4);
+        assertEquals(1, p.basecnt);
+
     }
 }
