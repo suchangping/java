@@ -17,7 +17,7 @@ public class GameTest {
     @Test
     public void testStrikeBall() {
         Team team = new Team();
-        team.setName("ソフトバンク");
+       // team.setName("ソフトバンク");
         Player player = new Player();
 
         player.strikeBall(team,1,1);
