@@ -2,13 +2,10 @@ package game;
 
 public class Team {
     String name;
-    int round;
     int[] scores = new int[12];
-    int batterout;
+    int outcnt;
+    public void setOutcnt
 
-    Team(){
-
-    }
     public void setScore(int round, int score) {
         scores[round] += score;
         System.out.println("点数" + scores[round]);

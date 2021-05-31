@@ -5,8 +5,8 @@ public class Dollar {
      Dollar (int amount) {
         this.amount = amount;
     }
-     void times(int multiplier) {     //メソッドtimes 生成
-        amount *=multiplier;
+     Dollar times(int multiplier) {     //メソッドtimes 生成
+        return  new Dollar(amount*multiplier);
     }
 
 }
